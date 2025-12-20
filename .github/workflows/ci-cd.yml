@@ -19,4 +19,4 @@ jobs:
         run: echo "Tests passed"
 
       - name: Deploy
-        run: ./deploy.sh
+        run: /mnt/d/DevOps_Interview_question/cloud-free-ci-cd/cloud-free-ci-cd/deploy.sh
