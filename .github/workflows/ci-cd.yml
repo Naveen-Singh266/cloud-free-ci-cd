@@ -18,6 +18,11 @@ jobs:
       - name: Test
         run: echo "Tests passed"
 
-      - name: Deploy
-        shell: bash
-        run: wsl bash /mnt/d/DevOps_Interview_question/cloud-free-ci-cd/cloud-free-ci-cd/deploy.sh
+      # Step 4: Deploy using WSL
+      - name: Deploy (CD)
+        shell: wsl  # <-- This tells GitHub Actions to run the step inside WSL
+        run: |
+          # Make sure deploy.sh is executable
+          chmod +x $GITHUB_WORKSPACE/deploy.sh
+          # Run the script
+          $GITHUB_WORKSPACE/deploy.sh
