@@ -19,4 +19,7 @@ jobs:
         run: echo "Tests passed"
 
       - name: Deploy
-        run: ./deploy.sh
+        shell: bash
+        run: |
+          chmod +x deploy.sh
+          ./deploy.sh
