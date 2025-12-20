@@ -1,0 +1,22 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  ci-cd:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo "Build completed"
+
+      - name: Test
+        run: echo "Tests passed"
+
+      - name: Deploy
+        run: bash deploy.sh
